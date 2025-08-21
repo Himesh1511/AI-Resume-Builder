@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+fpdf
+langchain
+langchain-openai
+langgraph
