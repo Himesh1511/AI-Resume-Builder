@@ -1,6 +1,6 @@
 📝 AI Resume Builder
 
-An AI-powered Resume Builder that generates ATS-friendly resumes using Groq-hosted LLMs (Gemma, LLaMA3, Mixtral).
+An AI-powered Resume Builder that generates ATS-friendly resumes using Groq-hosted LLMs.
 Built with FastAPI + LangGraph for the backend and a Node.js/HTML frontend with real-time streaming updates.
 
 ✨ Features:
