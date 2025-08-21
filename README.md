@@ -1,88 +1,103 @@
-# AI Resume Builder
+📝 AI Resume Builder
 
-![GitHub repo](https://img.shields.io/github/stars/Himesh1511/AI-Resume-Builder?style=social)
-![Languages](https://img.shields.io/github/languages/top/Himesh1511/AI-Resume-Builder)
+An AI-powered Resume Builder that generates ATS-friendly resumes using Groq-hosted LLMs (Gemma, LLaMA3, Mixtral).
+Built with FastAPI + LangGraph for the backend and a Node.js/HTML frontend with real-time streaming updates.
 
-An AI-powered resume builder that helps you craft professional, visually appealing, and ATS-friendly resumes using modern web technologies and artificial intelligence.
+✨ Features:
 
-## Features
+Generate professional resume sections (summary, skills, projects, experience, education, certifications, languages).
 
-- **AI-Powered Suggestions:** Get personalized content and bullet suggestions for your resume sections.
-- **Dynamic Templates:** Choose from multiple beautiful, responsive templates.
-- **Live Preview:** Instantly see how your resume looks as you edit.
-- **Download Options:** Export your resume in PDF and other formats.
-- **User-Friendly Interface:** Intuitive, clean UI for seamless experience.
-- **Customizable Sections:** Add, remove, and rearrange resume sections as needed.
-- **Data Privacy:** Your data stays on your device unless you choose to save or export.
+Live streaming updates while AI fills each section.
 
-## Tech Stack
+One-click PDF download of the final resume.
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend/AI:** Python (for AI functionalities)
+Reset option to start fresh.
 
+Supports multiple models (Gemma, LLaMA3, Mixtral) via Groq API.
 
-## Getting Started
+⚡ Tech Stack
 
-### Prerequisites
+Backend: FastAPI, LangGraph, Groq LLMs, FPDF
 
-- [Node.js](https://nodejs.org/) and npm (for frontend build, if applicable)
-- [Python 3.x](https://www.python.org/) (for backend/AI features)
-- (Optional) [pipenv](https://pipenv.pypa.io/en/latest/) or `virtualenv` for Python dependencies
+Frontend: Node.js, HTML, CSS, JavaScript (SSE streaming)
 
-### Installation
+AI Models: Groq-hosted Gemma, LLaMA3, Mixtral
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Himesh1511/AI-Resume-Builder.git
-   cd AI-Resume-Builder
-   ```
+Other: Python, AsyncIO, PDF generation
 
-2. **Install Frontend Dependencies**
-   ```bash
-   npm install
-   ```
+📂 Project Structure
+AI-Resume-Builder/
+│── backend/
+│   ├── main.py          # FastAPI backend with Groq LLM + PDF generation
+│   ├── requirements.txt # Python dependencies
+│── frontend/
+│   ├── index.html       # Main UI
+│   ├── style.css        # Styling
+│   ├── script.js        # Frontend logic (SSE + API calls)
+│── resumes/             # Generated resumes (PDFs)
+│── README.md
 
-3. **Install Python Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Or, if using pipenv:
-   ```bash
-   pipenv install
-   ```
+🚀 Setup & Run
+1. Clone Repo
+git clone https://github.com/Himesh1511/AI-Resume-Builder.git
+cd AI-Resume-Builder
 
-4. **Run the Application**
+2. Backend (FastAPI + Groq LLM)
+cd backend
+python -m venv venv
+source venv/bin/activate     # On Linux/Mac
+venv\Scripts\activate        # On Windows
 
-   - **Frontend:**
-     ```bash
-     npm start
-     ```
-   - **Backend (AI Server):**
-     ```bash
-     python app.py
-     ```
-   *(Adjust commands if a different framework or file names are used.)*
-
-5. **Open in Browser**
-   - Visit `http://localhost:3000` or the specified port.
-
-## Usage
-
-1. Enter your personal details, education, experience, and skills.
-2. Let the AI suggest bullet points or content improvements.
-3. Select your preferred template.
-4. Preview and download your resume.
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests for new features, bug fixes, or improvements.
-
-1. Fork the repo
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Open a pull request
+pip install -r requirements.txt
 
 
+Make sure you set your Groq API Key:
 
-> **Contact:** For questions or support, please open an issue or reach out to [Himesh1511](https://github.com/Himesh1511).
+# Linux/Mac
+export GROQ_API_KEY="your_api_key_here"
+export MODEL="gemma-7b-it"
+
+# Windows (Powershell)
+setx GROQ_API_KEY "your_api_key_here"
+setx MODEL "gemma-7b-it"
+
+
+Run backend:
+
+uvicorn main:app --reload --port 8000
+
+3. Frontend
+cd ../frontend
+python -m http.server 5500
+
+
+or
+
+npx serve .
+
+
+Open 👉 http://localhost:5500
+
+
+💡 Example
+
+Enter your details in the form → AI generates structured content → PDF downloaded in one click.
+
+🌟 Future Improvements
+
+Add LinkedIn/portfolio auto-import.
+
+Support multiple resume templates.
+
+Provide role-based resume tailoring.
+
+Add cover letter generator.
+
+🤝 Contributing
+
+Pull requests are welcome! Please open an issue first to discuss changes.
+
+
+Created by Himesh Verma
+
+Feel free to reach out if you want to collaborate!
