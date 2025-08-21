@@ -19,7 +19,7 @@ An AI-powered resume builder that helps you craft professional, visually appeali
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend/AI:** Python (for AI functionalities)
-- **Other Libraries:** (Add any specific libraries or frameworks used, e.g., Flask, TensorFlow, React, etc.)
+
 
 ## Getting Started
 
